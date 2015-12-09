@@ -13,6 +13,7 @@ define('ROOT_PATH', realpath(dirname(__FILE__)).'/');
 
 $host = isset($argv[1]) ? $argv[1] : false;
 $port = isset($argv[2]) ? $argv[2] : 80;
+$email = isset($argv[3]) ? $argv[3] : false;
 
 if($host === false) {
 	die('No host');
@@ -51,7 +52,13 @@ function check_status($host, $port = 80)
 
 function send_email($subject, $message = "")
 {
-	return mail ( "nickbreslin@gmail.com" , $subject, $message);
+	global $email;
+
+	if(!$email) {
+		return false;
+	}
+	
+	return mail ( $email, $subject, $message);
 }
 
 
