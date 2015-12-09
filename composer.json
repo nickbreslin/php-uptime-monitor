@@ -1,0 +1,13 @@
+{
+    "name": "nickbreslin/google-spreadsheet-bug-tracker",
+    "description": "Using Google Spreadsheet to track bugs",
+    "require": {
+        "php": ">=5.5.0",
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "2.*",
+        "phpdocumentor/phpdocumentor": "2.*",
+        "phpunit/phpunit": "5.0.*",
+        "phpunit/php-code-coverage": "^3"
+    }
+}
