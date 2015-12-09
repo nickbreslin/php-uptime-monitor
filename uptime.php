@@ -59,21 +59,13 @@ function handle_failure($file)
 {
 	if(lock_exists($file))
 	{
-		if(remove_lock($file))
-		{
-			send_email("Uptime Detected for $file");
-		
-		}
-		else
-		{
-			// could not remove lock
-		}
+		// do nothing
 	}
 	else
 	{
 		if(create_lock($file))
 		{
-			send_email("Uptime Detected for $file");
+			send_email("Downtime Detected for $file");
 		
 		}
 		else
